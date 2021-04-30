@@ -168,14 +168,7 @@ favoriteColors`제가 좋아하는 색은 ${red}과 ${blue}입니다.`;
 - ...values는 rest연산자로 ${} 내부의 값을 하나씩 받는다 (template literal문법으로
   쓰인 아이들 )
 
-### 2. useState로 관리되는 상태값 넘기기
-
-```javascript
-import React, {useState} from “react”;
-import styled from “styled-components”;
-```
-
-### 3. 모듈화하여 이용) props를 이용해 재사용 가능한 컴포넌트 생성하기
+### 2. 모듈화하여 이용) props를 이용해 재사용 가능한 컴포넌트 생성하기
 
 ```javascript
 //Button.js
@@ -234,10 +227,6 @@ function Button({ children, size, ...rest }) {
 export default Button;
 ```
 
-이처럼 props값을 받아서 각각의 props값에 따라 다르게 스타일링 할 수 있습니다!
-아까 고정 컴포넌트에서의 재사용 css 컴포넌트는 내부에 가변형 인자가 없었지만,
-이 경우는 가변형 인자를 가지고 재사용 css컴포넌트를 만들었다고 보면 될 것 같습니다~!
-
 ```javascript
 //App.js
 import React from "react";
@@ -266,3 +255,39 @@ function App() {
 
 export default App;
 ```
+
+이처럼 props값을 받아서 각각의 props값에 따라 다르게 스타일링 할 수 있습니다!
+아까 고정 컴포넌트에서의 재사용 css 컴포넌트는 내부에 가변형 인자가 없었지만,
+이 경우는 가변형 인자를 가지고 재사용 css컴포넌트를 만들었다고 보면 될 것 같습니다~!
+
+## 3. 기존 스타일 확장시켜 활용하기!
+
+기존에 만든 스타일과 비슷하지만 몇몇가지를 추가해 확장한 새로운 스타일을 만들고 싶다면 아래의 방법을 이용할 수 있습니다!
+
+```javascript
+const 확장스타일컴포넌트이름 = styled(상속받을스타일컴포넌트)`추가할 코드 작성`;
+```
+
+```javascript
+const StyleButton = styled.button`
+  /* 공통 스타일 */
+  display: inline-flex;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  padding-left: 1rem;
+  padding-right: 1rem;
+`;
+
+//StyleButton값은 자동으로 세팅이 되어 있는 상태에서 새로운 스타일을 추가할 수 있다!
+const RedLongButton = styled(Stylebutton)`
+  color: red;
+`;
+```
+
+# 🐰 Epilogue
+
+기본적인 styled-components를 정리해보았는데, 사실 이 뿐만 아니라 활용할 수 있는 것들이 정말정말 많습니다! animation, Global Theme, Nesting 등등 수많은 활용할 수 있는 것들이 있으니까 실제로 필요할 때 찾아서 이용해보면 좋을 것 같습니다!
