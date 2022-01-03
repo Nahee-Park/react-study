@@ -184,7 +184,7 @@ async function putData() {
 
 ## 3-4. DELETE
 
-> **axios.delete(url[,config]) **
+> **axios.delete(url[,config])**
 
 데이터베이스 내부의 데이터를 삭제하는 DELETE 메소드는 **일반적으로 body가 비어있는 형태**이지만, query나 params가 많아서 **헤더에 많은 정보를 담기 어려운 상황에 한해서만** 두번째 인자에 data를 추가해줍니다.
 
