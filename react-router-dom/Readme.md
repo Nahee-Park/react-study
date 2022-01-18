@@ -15,7 +15,7 @@
    - HOC 이용 (V.5.0 아래)
    - hooks 이용 (V. 5.1 이상)
 
-# 0. react-rounter-dom이 뭔가요?
+# 0. react-router-dom이 뭔가요?
 
 `react-router`과 `react-rounter-dom`에 대해 들어는 봤지만 명확한 차이는 모르시는 분들이 계실 겁니다.  
 **`react-router-dom` 모듈**은 `react-router` v4 버전에서 처음 릴리즈 된 라우팅 모듈로, **`react-router` 모듈에 dom이 바인딩 되어 있는 모듈**입니다.  
